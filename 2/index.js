@@ -5,7 +5,7 @@ const data = fs.readFileSync('./encrypted.txt', 'utf8')
 function encrypted(data) {
     let string = ''
     for (let i = 0; i < data.length;) {
-        if (data[i] == 9) {
+        if (data[i] > 1 && data[i] <= 9) {
             const piece = data.slice(i, i+2)
             string = string.concat(String.fromCharCode(piece))
             i+=2
